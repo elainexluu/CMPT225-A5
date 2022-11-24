@@ -31,8 +31,9 @@ private:
   unsigned int elementCount = 0;        // Current number of elements stored into Data Collection.
   unsigned int (*hashFcn)(string name); // Pointer to hash function.
 
-  // Description: returns true if list is empty, otherwise false
-  bool isEmpty();
+  // Description: Checks if the table is empty.
+  // Postcondition: List remains unchanged.
+  bool isEmpty() const;
 
 public:
   /*
@@ -44,7 +45,7 @@ public:
   constexpr static unsigned int CAPACITY = 100; // Size of hashTable - underlying data structure (array) of List.
 
   // Constructor
-  List(unsigned int (*hFcn)(Member));
+  List(unsigned int (*hFcn)(string));
 
   // Destructor
   // Description: Destruct a List object, releasing heap-allocated memory.

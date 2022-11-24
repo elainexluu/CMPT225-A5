@@ -18,12 +18,13 @@
 #include "List.h"
 #include "ElementAlreadyExistsException.h"
 #include "ElementDoesNotExistException.h"
+#include "EmptyDataCollectionException.h"
 #include "UnableToInsertException.h"
 
 // Constructor
-List::List(unsigned int (*hFcn)(Member))
-    : hashFcn(hFcn), hashTable(nullptr), elementCount(0)
+List::List(unsigned int (*hFcn)(string))
 {
+    hashFcn = hFcn;
     hashTable = new Member *[CAPACITY];
     for (int i = 0; i < CAPACITY; i++)
     {
@@ -58,7 +59,7 @@ unsigned int List::getElementCount() const
 // Exception: Throws ElementDoesNotExistException if newElement is not found in the List.
 Member *List::search(Member &target) const
 {
-    int index = hashFcn(&target); // compute hash index
+    int index = hashFcn(target.getPhone()); // compute hash index
 
     if (isEmpty()) // list is empty
     {
@@ -100,7 +101,7 @@ void List::printList() const
 ////////////////////////////// Helper functions ///////////////////////////
 
 // Description: returns true if list is empty, otherwise false
-bool List::isEmpty()
+bool List::isEmpty() const
 {
     return elementCount == 0;
 }
