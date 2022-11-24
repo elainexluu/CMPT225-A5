@@ -48,10 +48,23 @@ Member* List::search( Member & target ) const
     {
         return (&hashTable[index]);
     }
-    else
+    else // target key not found
     {
-        if ()
+        if (hashTable[index] == 0) // throw exception if cell is empty
+        {
+            throw ElementDoesNotExistException("Element does not exist in hash table.");
+        }
+        else // cell is not empty -> collision
+        {
+            int i = 0;
+            while(hashTable[index] != target)
+            {
+                index = (index + i) % CAPACITY;
+                i++;
+            }
+        }
     }
+    return (&hashTable[index]);
 }
 
 // Description: Prints all elements stored in the List (unsorted).
