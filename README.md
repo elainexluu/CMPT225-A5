@@ -52,16 +52,16 @@ If we find a different way of detecting whether an array cell is empty or not, f
 
    To verify the goodness of each of our hash functions, we need to '   '
 
-..1.    Analyse the time and space complexity (efficiency) of each of our hash function and add these results as a comment above the function, for example:
+    1.    Analyse the time and space complexity (efficiency) of each of our hash function and add these results as a comment above the function, for example:
 
-```
-// Time efficiency: ...
-// Space efficiency: ... 
-```
+            ```
+            // Time efficiency: ...
+            // Space efficiency: ... 
+            ```
 
-   Finally, conclude whether or not this particular hash function is **easy to compute**.
+    Finally, conclude whether or not this particular hash function is **easy to compute**.
 
-..2. Experiment with our hash functions in order to ascertain whether they spread over the whole hash table the hash table indices they produce.
+    2. Experiment with our hash functions in order to ascertain whether they spread over the whole hash table the hash table indices they produce.
 
    Refer to our Lab 10, our demo of Tuesday Nov. 22 and have a look at the recording of Lecture 30 in order to get a sense of what this type of experimentation feels like.
 
@@ -71,22 +71,22 @@ If we find a different way of detecting whether an array cell is empty or not, f
 
    Let's observe the results we obtain: can we ascertain which of our three hash functions is/are good?
 
-.. If none of them spread the hash table indices well enough, let's tweak at least one of our hash functions until it produces a good spread of hash table indices. If we are to tweak (modify) one or more of our hash functions, let's first copy and paste the initial hash function that needs to be tweaked, then rename its copy and then tweak it. This way, we get to keep all our hash functions.
+     If none of them spread the hash table indices well enough, let's tweak at least one of our hash functions until it produces a good spread of hash table indices. If we are to tweak (modify) one or more of our hash functions, let's first copy and paste the initial hash function that needs to be tweaked, then rename its copy and then tweak it. This way, we get to keep all our hash functions.
 
 
-..3. Let's record our results as comments above each hash function. More specifically
+    3. Let's record our results as comments above each hash function. More specifically
 
-..* Supply a description of the spread of the hash table indices.
+        * Supply a description of the spread of the hash table indices.
 
-..* Indicate the number of empty cells in the hash table once all elements have been inserted.
+        * Indicate the number of empty cells in the hash table once all elements have been inserted.
 
-..* State the number of elements that were inserted into the hash table using one probe, the number of elements that were inserted into the hash table using more than one probe and the number of probes done in each hash table cell.
+        * State the number of elements that were inserted into the hash table using one probe, the number of elements that were inserted into the hash table using more than one probe and the number of probes done in each hash table cell.
 
-..* Any other results we wish to report on.
+        * Any other results we wish to report on.
 
-   If we do not have enough space to report our results as comments above each hash function, we can add them as comments at the bottom of our file.
+        If we do not have enough space to report our results as comments above each hash function, we can add them as comments at the bottom of our file.
 
-..4. Finally, conclude which hash function best spreads over the whole hash table the hash table indices it produces.
+    4. Finally, conclude which hash function best spreads over the whole hash table the hash table indices it produces.
 
 -------------
 # Reflections
