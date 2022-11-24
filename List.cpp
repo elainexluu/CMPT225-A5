@@ -17,19 +17,40 @@
 
 #include "List.h"
 #include "ElementAlreadyExistsException.h"
+#include "ElementDoesNotExistException.h"
 #include "UnableToInsertException.h"
 
 // Constructor
 List::List(unsigned int (*hFcn)(string))
     : hashFcn(hFcn), hashTable(nullptr), elementCount(0) 
-{}
+{
+    hashTable = new Member* [CAPACITY];
+    for (int i = 0; i < CAPACITY; i++)
+    {
+        hashTable[i] = nullptr;
+    }
+}
 
 // Destructor
 // Description: Destruct a List object, releasing heap-allocated memory.
-// List::~List()
-// {
-   
-// }
+List::~List()
+{
+   for (int i = 0; i < CAPACITY; i++)
+   {
+        if (hashTable != nullptr)
+        {
+            delete hashTable[i];
+            delete [] hashTable;
+        }
+   }
+}
+
+// Description: Returns the total element count currently stored in List.
+// Postcondition: List remains unchanged.
+unsigned int List::getElementCount() const
+{
+    returns elementCount;
+}
 
 
 // Description: Returns a pointer to the target element if found.
@@ -69,10 +90,15 @@ Member* List::search( Member & target ) const
 
 // Description: Prints all elements stored in the List (unsorted).
 // Postcondition: List remains unchanged.
-// void List::printList() const
-// {
+void List::printList() const
+{
+    for (int i = 0; i < CAPACITY; i++)
+    {
+        cout << hashTable[i] << endl;
+    }
+}
 
-// }
+////////////////////////////// Helper functions ///////////////////////////
 
 // Description: returns true if list is empty, otherwise false
 bool List::isEmpty() {
