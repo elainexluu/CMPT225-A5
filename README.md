@@ -1,7 +1,7 @@
 # CMPT225 Assignment 5
 
 # Objectives
-==========
+============
 
 *   Create hash functions and verfiying their goodness through complexity analysis and experimentation.
 *   Implement the open addressing collision resolution strategy called linear probing hashing.
@@ -48,7 +48,7 @@ If we find a different way of detecting whether an array cell is empty or not, f
 
 7.  Once we have created our hash functions and created plenty of random test data (indexing keys), let's make sure our hash functions are good.
 
-   If needed, let's refer to our lectures on hashing for a description of what we mean by good hash functions.
+    If needed, let's refer to our lectures on hashing for a description of what we mean by good hash functions.
 
    To verify the goodness of each of our hash functions, we need to '   '
 
