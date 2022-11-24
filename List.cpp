@@ -14,7 +14,6 @@
 #include <iostream>
 #include <string>
 
-#include "Member.h"
 #include "List.h"
 #include "ElementAlreadyExistsException.h"
 #include "ElementDoesNotExistException.h"
@@ -53,6 +52,38 @@ unsigned int List::getElementCount() const
     return elementCount;
 }
 
+// Description: Insert an element.
+// NOTE: You do not have to expand the hashTable when it is full.
+// Precondition: newElement must not already be in in the List.
+// Postcondition: newElement inserted and elementCount has been incremented.
+// Exception: Throws UnableToInsertException if we cannot insert newElement in the List.
+//            For example, if the operator "new" fails, or hashTable is full (temporary solution).
+// Exception: Throws ElementAlreadyExistsException if newElement is already in the List.
+void List::insert(Member &newElement)
+{
+    if (elementCount == CAPACITY)
+    {
+        throw UnableToInsertException("Unable to insert element. List is full.");
+    }
+    else
+    {
+        int index = hashFcn(newElement.getPhone());
+
+        if (hashTable[index] == &newElement)
+        {
+            throw ElementAlreadyExistsException("Unable to insert element. Element already exists.");
+        }
+
+        while (hashTable[index] != nullptr)
+        {
+            index = (index + 1) % CAPACITY;
+        }
+
+        hashTable[index] = &newElement;
+        elementCount++;
+    }
+}
+
 // Description: Returns a pointer to the target element if found.
 // Postcondition: List remains unchanged.
 // Exception: Throws EmptyDataCollectionException if the List is empty.
@@ -71,7 +102,7 @@ Member *List::search(Member &target) const
     }
     else // target key not found
     {
-        if (hashTable[index] == 0) // throw exception if cell is empty
+        if (hashTable[index] == nullptr) // throw exception if cell is empty
         {
             throw ElementDoesNotExistException("Element does not exist in hash table.");
         }
