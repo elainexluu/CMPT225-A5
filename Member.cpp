@@ -51,7 +51,7 @@ Member::Member(string aPhone)
             break;
         }
         // if phone number has no dash at either position 3 or 7, invalid phone number (000-000-0000)
-        if (i == 3 && aPhone[i] != '-' || i == 7 && aPhone[i] != '-')
+        if ((i == 3 && aPhone[i] != '-') || (i == 7 && aPhone[i] != '-'))
         {
             invalidPhone = true;
             break;
@@ -103,7 +103,7 @@ Member::Member(string aName, string aPhone, string anEmail, string aCreditCard) 
             break;
         }
         // if phone number has no dash at either position 3 or 7, invalid phone number (000-000-0000)
-        if (i == 3 && aPhone[i] != '-' || i == 7 && aPhone[i] != '-')
+        if ((i == 3 && aPhone[i] != '-') || (i == 7 && aPhone[i] != '-'))
         {
             invalidPhone = true;
             break;

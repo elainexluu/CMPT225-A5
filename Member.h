@@ -24,7 +24,7 @@ class Member
     /* You cannot change this file (i.e., the definition of this class). */
 
 private:
-    const static const int SIZE_OF_PHONE_NUMBER = 12;
+    const static int SIZE_OF_PHONE_NUMBER = 12;
 
     string name;
     string phone;
