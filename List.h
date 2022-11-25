@@ -42,7 +42,7 @@ public:
    *
    */
 
-  constexpr static unsigned int CAPACITY = 100; // Size of hashTable - underlying data structure (array) of List.
+  const static unsigned int CAPACITY = 100; // Size of hashTable - underlying data structure (array) of List.
 
   // Constructor
   List(unsigned int (*hFcn)(string));

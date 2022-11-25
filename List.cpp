@@ -125,7 +125,11 @@ void List::printList() const
 {
     for (int i = 0; i < CAPACITY; i++)
     {
-        cout << hashTable[i] << endl;
+        if (hashTable[i] != nullptr)
+        {
+            // cout << hashTable[i]->getName() << " " << hashTable[i]->getPhone() << endl;
+            cout << i << " " << *hashTable[i] << endl;
+        }
     }
 }
 

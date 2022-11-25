@@ -1,11 +1,11 @@
 /*
  * Member.h
- * 
+ *
  * Class Description: Models a Fitness Studio Registration System.
  * Class Invariant: Each member has a unique cell phone number.
  *                  This cell phone number must have 12 digits.
  *                  This cell phone number must have the following format: XXX-XXX-XXXX.
- *                  This cell phone number cannot be modified. 
+ *                  This cell phone number cannot be modified.
  *
  * Author: Elaine Luu
  * Last modified: Sept. 21, 2022
@@ -18,15 +18,15 @@
 
 using namespace std;
 
-class Member {
+class Member
+{
 
-/* You cannot change this file (i.e., the definition of this class). */
- 	
+    /* You cannot change this file (i.e., the definition of this class). */
+
 private:
+    const static const int SIZE_OF_PHONE_NUMBER = 12;
 
-    constexpr static const int SIZE_OF_PHONE_NUMBER = 12;
-
-    string name;                      
+    string name;
     string phone;
     string email;
     string creditCard;
@@ -36,10 +36,9 @@ private:
     void setPhone(const string aPhone);
 
 public:
-
     // Default Constructor
-    // Description: Create a member with a cell phone number of "000-000-0000". 
-    // Postcondition: All data members set to an empty string, 
+    // Description: Create a member with a cell phone number of "000-000-0000".
+    // Postcondition: All data members set to an empty string,
     //                except the cell phone number which is set to "000-000-0000".
     Member();
 
@@ -48,12 +47,11 @@ public:
     // Postcondition: If aPhone does not have 12 digits, then aPhone is set to "000-000-0000".
     //                All other data members set to an empty string.
     Member(string aPhone);
-	
+
     // Parameterized Constructor
     // Description: Create a member with the given name, cell phone number, email and credit card number.
     // Postcondition: If aPhone does not have 12 digits, then aPhone is set to "000-000-0000".
     Member(string aName, string aPhone, string anEmail, string aCreditCard);
-
 
     // Getters and setters
     // Description: Returns member's name.
@@ -64,7 +62,7 @@ public:
 
     // Description: Returns member's email.
     string getEmail() const;
-	
+
     // Description: Returns member's credit card.
     string getCreditCard() const;
 
@@ -73,30 +71,29 @@ public:
 
     // Description: Sets the member's email.
     void setEmail(const string anEmail);
-	
+
     // Description: Sets the member's credit card number.
     void setCreditCard(const string aCreditCard);
-
 
     // Overloaded Operators
     // Description: Comparison operator. Compares "this" Member object with "rhs" Member object.
     //              Returns true if both Member objects have the same cell phone number.
-    bool operator == (const Member & rhs);
+    bool operator==(const Member &rhs);
 
     // Description: Greater than operator. Compares "this" Member object with "rhs" Member object.
-    //              Returns true if the cell phone number of "this" Member object is > the 
+    //              Returns true if the cell phone number of "this" Member object is > the
     //              cell phone number of "rhs" Member object.
-    bool operator > (const Member & rhs);
-	
+    bool operator>(const Member &rhs);
+
     // Description: Less than operator. Compares "this" Member object with "rhs" Member object.
-    //              Returns true if the cell phone number of "this" Member object is < the 
+    //              Returns true if the cell phone number of "this" Member object is < the
     //              cell phone number of "rhs" Member object.
-    bool operator < (const Member & rhs);
-	
+    bool operator<(const Member &rhs);
+
     // For testing purposes!
     // Description: Prints the content of "this".
-    // Example: Louis Pace, 604-853-1423, louis@nowhere.com, 1234 5678 9098 7654 
-    friend ostream & operator<<(ostream & os, const Member & p);
+    // Example: Louis Pace, 604-853-1423, louis@nowhere.com, 1234 5678 9098 7654
+    friend ostream &operator<<(ostream &os, const Member &p);
 
 }; // end of Member.h
 #endif
