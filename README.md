@@ -36,10 +36,15 @@ If we find a different way of detecting whether an array cell is empty or not, f
 
 
 4.  Before we proceed to the implementation of our hash functions, we need to modify the implementation of the methods of our List ADT class:
+
 ..* First, we need to modify the implementation of the insert(   ) method such that it uses the hashing strategy and when collisions occur, it uses the open addressing collision resolution strategy called linear probing hashing to resolve these collisions.
+
 ..* Then, we need to modify the implementation of the search(   ) method such that it uses the hashing strategy and when collisions occur, it uses the open addressing collision resolution strategy called linear probing hashing to resolve these collisions.
+
 ..* Make sure these methods do throw the proper exceptions.
+
 ..* Notice that for this assignment, the List's public interface does not contain the method removeAll(), remove() and clear(). So, there is no need to modify their implementation.
+
 ..* Feel free to find inspiration from the hashDataCollection class seen in Lab 10 and our demo seen on Tuesday Nov. 22.
 
 5.  The next step is to create various hash functions that will transform our indexing keys into hash table indices. To do so, use the file hashFunctionTestDriver.cpp provided in our Lab 10 and create three different hash functions. We are free to use any type of hash functions except the hash functions that transform string indexing keys into hash table indices by manipulating the ASCII value of each of its characters (as demo'ed during our lecture on Tuesday Nov. 22).
