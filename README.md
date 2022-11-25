@@ -64,7 +64,7 @@ If we find a different way of detecting whether an array cell is empty or not, f
             // Space efficiency: ... 
             ```
 
-    Finally, conclude whether or not this particular hash function is **easy to compute**.
+         Finally, conclude whether or not this particular hash function is **easy to compute**.
 
     2. Experiment with our hash functions in order to ascertain whether they spread over the whole hash table the hash table indices they produce.
 
