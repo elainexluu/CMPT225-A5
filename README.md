@@ -1,7 +1,7 @@
 # CMPT225 Assignment 5
 
 # Objectives
-============
+
 
 *   Create hash functions and verfiying their goodness through complexity analysis and experimentation.
 *   Implement the open addressing collision resolution strategy called linear probing hashing.
