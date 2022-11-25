@@ -28,6 +28,33 @@ unsigned int hashModulo(string indexingKey)
     return hashCode % List::CAPACITY;
 }
 
+// Hash Function #2
+// Description: Implements the type of hash function called "Folding -> shift" 
+//              in which we partition the indexing key into parts and combine 
+//              these parts using arithmetic operation(s).
+unsigned int hashFoldShift( string indexingKey ) {
+
+    // "hashCode" is an intermediate result
+    unsigned int hashCode = 0;
+    unsigned int sumOfPart = 0;
+
+    unsigned int part1 = stoul(indexingKey.substr(0, 3));
+    unsigned int part2 = stoul(indexingKey.substr(4, 3));
+    unsigned int part3 = stoul(indexingKey.substr(8, 4));
+
+    // Testing purposes
+    // cout << "partition 1 of indexing key: " << part1 << endl;
+    // cout << "partition 2 of indexing key: " << part2 << endl;
+    // cout << "partition 3 of indexing key: " << part3 << endl;
+
+    sumOfPart = (part1 + part2 + part3);
+
+    hashCode = sumOfPart % List::CAPACITY;
+    cout << "hashCode: " << hashCode << endl;
+  	
+  return hashCode;
+}
+
 int main()
 {
 
@@ -41,7 +68,7 @@ int main()
     cout << endl
          << "Create a default List -> testing constructor List()." << endl;
     cout << "Expected Result: empty List." << endl;
-    List *member = new List(hashModulo);
+    List *member = new List(hashFoldShift);
     cout << "Actual Result: " << endl;
     member->printList();
     cout << endl;
