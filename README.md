@@ -55,7 +55,7 @@ If we find a different way of detecting whether an array cell is empty or not, f
 
     If needed, let's refer to our lectures on hashing for a description of what we mean by good hash functions.
 
-   To verify the goodness of each of our hash functions, we need to
+    To verify the goodness of each of our hash functions, we need to:
 
     1.    Analyse the time and space complexity (efficiency) of each of our hash function and add these results as a comment above the function, for example:
 
