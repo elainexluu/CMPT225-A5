@@ -37,15 +37,15 @@ If we find a different way of detecting whether an array cell is empty or not, f
 
 4.  Before we proceed to the implementation of our hash functions, we need to modify the implementation of the methods of our List ADT class:
 
-..* First, we need to modify the implementation of the insert(   ) method such that it uses the hashing strategy and when collisions occur, it uses the open addressing collision resolution strategy called linear probing hashing to resolve these collisions.
+    * First, we need to modify the implementation of the insert(   ) method such that it uses the hashing strategy and when collisions occur, it uses the open addressing collision resolution strategy called linear probing hashing to resolve these collisions.
 
-..* Then, we need to modify the implementation of the search(   ) method such that it uses the hashing strategy and when collisions occur, it uses the open addressing collision resolution strategy called linear probing hashing to resolve these collisions.
+    * Then, we need to modify the implementation of the search(   ) method such that it uses the hashing strategy and when collisions occur, it uses the open addressing collision resolution strategy called linear probing hashing to resolve these collisions.
 
-..* Make sure these methods do throw the proper exceptions.
+    * Make sure these methods do throw the proper exceptions.
 
-..* Notice that for this assignment, the List's public interface does not contain the method removeAll(), remove() and clear(). So, there is no need to modify their implementation.
+    * Notice that for this assignment, the List's public interface does not contain the method removeAll(), remove() and clear(). So, there is no need to modify their implementation.
 
-..* Feel free to find inspiration from the hashDataCollection class seen in Lab 10 and our demo seen on Tuesday Nov. 22.
+    * Feel free to find inspiration from the hashDataCollection class seen in Lab 10 and our demo seen on Tuesday Nov. 22.
 
 5.  The next step is to create various hash functions that will transform our indexing keys into hash table indices. To do so, use the file hashFunctionTestDriver.cpp provided in our Lab 10 and create three different hash functions. We are free to use any type of hash functions except the hash functions that transform string indexing keys into hash table indices by manipulating the ASCII value of each of its characters (as demo'ed during our lecture on Tuesday Nov. 22).
 
@@ -55,7 +55,7 @@ If we find a different way of detecting whether an array cell is empty or not, f
 
     If needed, let's refer to our lectures on hashing for a description of what we mean by good hash functions.
 
-   To verify the goodness of each of our hash functions, we need to '   '
+   To verify the goodness of each of our hash functions, we need to
 
     1.    Analyse the time and space complexity (efficiency) of each of our hash function and add these results as a comment above the function, for example:
 
@@ -68,15 +68,18 @@ If we find a different way of detecting whether an array cell is empty or not, f
 
     2. Experiment with our hash functions in order to ascertain whether they spread over the whole hash table the hash table indices they produce.
 
-   Refer to our Lab 10, our demo of Tuesday Nov. 22 and have a look at the recording of Lecture 30 in order to get a sense of what this type of experimentation feels like.
+        Refer to our Lab 10, our demo of Tuesday Nov. 22 and have a look at the recording of Lecture 30 in order to get a sense of what this type of experimentation feels like.
 
-   Experiment: Let's recycle the code used in our demo (for example, histogram and printStats from hashDataCollection class) or write our own in order to see how well our hash functions spread over the whole hash table the hash table indices they produce.
+        Experiment: Let's recycle the code used in our demo (for example, histogram and printStats from hashDataCollection class) or write our own in order to see how well our hash functions spread over the whole hash table the hash table indices they produce.
 
-   Note: Contrary to our demo, in which we compared indexing keys of different lengths, note that, in the context of our Assignment 1, the length of our indexing keys is fixed.
+        Note: Contrary to our demo, in which we compared indexing keys of different lengths, note that, in the context of our Assignment 1, the length of our indexing keys is fixed.
 
-   Let's observe the results we obtain: can we ascertain which of our three hash functions is/are good?
+        Let's observe the results we obtain: can we ascertain which of our three hash functions is/are good?
 
-     If none of them spread the hash table indices well enough, let's tweak at least one of our hash functions until it produces a good spread of hash table indices. If we are to tweak (modify) one or more of our hash functions, let's first copy and paste the initial hash function that needs to be tweaked, then rename its copy and then tweak it. This way, we get to keep all our hash functions.
+        If none of them spread the hash table indices well enough, let's tweak at least one of our hash functions until it 
+        produces a good spread of hash table indices. If we are to tweak (modify) one or more of our hash functions, let's 
+        first copy and paste the initial hash function that needs to be tweaked, then rename its copy and then tweak it. 
+        This way, we get to keep all our hash functions.
 
 
     3. Let's record our results as comments above each hash function. More specifically
