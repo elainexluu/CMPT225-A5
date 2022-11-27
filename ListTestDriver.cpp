@@ -29,10 +29,11 @@ unsigned int hashModulo(string indexingKey)
 }
 
 // Hash Function #2
-// Description: Implements the type of hash function called "Folding -> shift" 
-//              in which we partition the indexing key into parts and combine 
+// Description: Implements the type of hash function called "Folding -> shift"
+//              in which we partition the indexing key into parts and combine
 //              these parts using arithmetic operation(s).
-unsigned int hashFoldShift( string indexingKey ) {
+unsigned int hashFoldShift(string indexingKey)
+{
 
     // "hashCode" is an intermediate result
     unsigned int hashCode = 0;
@@ -51,8 +52,45 @@ unsigned int hashFoldShift( string indexingKey ) {
 
     hashCode = sumOfPart % List::CAPACITY;
     cout << "hashCode: " << hashCode << endl;
-  	
-  return hashCode;
+
+    return hashCode;
+}
+
+// Hash Function #3
+// Description: Implements the type of hash function called "Folding -> boundary"
+//              in which we partition the indexing key into parts and combine
+//              these parts using arithmetic operation(s). In this type of folding,
+//              the alternate parts (2nd, 4th ... parts) are reversed (i.e., flipped).
+unsigned int hashFoldBoundary(string indexingKey)
+{
+
+    // Implements the Folding -> boundary hash function.
+    unsigned int hashCode = 0;
+    unsigned int sumOfPart = 0;
+
+    string part2str = indexingKey.substr(4, 3);
+    string part2rev;
+
+    // reverse part2
+
+    for (int i = part2str.length() - 1; i >= 0; i--)
+    {
+        part2rev += part2str[i];
+    }
+
+    unsigned int part1 = stoul(indexingKey.substr(0, 3));
+    unsigned int part2 = stoul(part2rev);
+    unsigned int part3 = stoul(indexingKey.substr(8, 4));
+
+    // Testing purposes
+    cout << "partition 1 of indexing key: " << part1 << endl;
+    cout << "partition 2 of indexing key: " << part2 << endl;
+    cout << "partition 3 of indexing key: " << part3 << endl;
+
+    hashCode = sumOfPart % List::CAPACITY;
+    cout << "hashCode: " << hashCode << endl;
+
+    return hashCode;
 }
 
 int main()
@@ -68,7 +106,7 @@ int main()
     cout << endl
          << "Create a default List -> testing constructor List()." << endl;
     cout << "Expected Result: empty List." << endl;
-    List *member = new List(hashFoldShift);
+    List *member = new List(hashFoldBoundary);
     cout << "Actual Result: " << endl;
     member->printList();
     cout << endl;
