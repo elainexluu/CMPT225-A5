@@ -83,9 +83,11 @@ unsigned int hashFoldBoundary(string indexingKey)
     unsigned int part3 = stoul(indexingKey.substr(8, 4));
 
     // Testing purposes
-    cout << "partition 1 of indexing key: " << part1 << endl;
-    cout << "partition 2 of indexing key: " << part2 << endl;
-    cout << "partition 3 of indexing key: " << part3 << endl;
+    // cout << "partition 1 of indexing key: " << part1 << endl;
+    // cout << "partition 2 of indexing key: " << part2 << endl;
+    // cout << "partition 3 of indexing key: " << part3 << endl;
+
+    sumOfPart = (part1 + part2 + part3);
 
     hashCode = sumOfPart % List::CAPACITY;
     cout << "hashCode: " << hashCode << endl;
