@@ -11,6 +11,9 @@
 #include "List.h"
 #include "Member.h"
 #include <iostream>
+#include <stdlib.h> // for rand()
+#include <time.h>   // for time()
+#include <fstream>
 
 using namespace std;
 
@@ -97,35 +100,65 @@ unsigned int hashFoldBoundary(string indexingKey)
 
 // Description: creates a certain number of indexing keys of the expected format.
 //              Each digit is randomly selected.
-string randomKeyGenerator(unsigned int num)
-{
-    string appendNum = "";
-    unsigned int randomNum = 0;
-    int count = 0;
+// string randomKeyGenerator(unsigned int num)
+// {
+//     string appendNum = "";
+//     unsigned int randomNum = 0;
+//     int count = 0;
 
+//     for (unsigned int i = 0; i < num; i++)
+//     {
+//         unsigned int randomNum = rand() % 10;
+//         // cout << "key: " << key % 10 << endl;
+//         appendNum = appendNum + to_string(randomNum);
+//         count++;
+//     }
+
+//     while (count != 10) // append indexing key with zeroes
+//     {
+//         appendNum += "0";
+//         count++;
+//     }
+
+//     string generatedKey = appendNum.substr(0, 3) + "-" +
+//                           appendNum.substr(3, 3) + "-" +
+//                           appendNum.substr(7, 4);
+
+//     // Testing purposes
+//     // cout << "generatedKey: " << generatedKey << endl;
+//     // cout << "appendNum: " << appendNum << endl;
+
+//     return generatedKey;
+// }
+
+// Description: creates a certain number of indexing keys of the expected format.
+//              Each digit is randomly selected.
+void randomKeyGenerator(unsigned int num)
+{
+    // open file "randomKeys.txt" for writing the generated keys in overwriting mode
+    ofstream outFile;
+    outFile.open("randomKeys.txt", ios::trunc);
+
+    // digitCount signifies the number of digits in the indexing key - In this case, phone number
+    // is the indexing key and it has 10 digits.
+    unsigned int digitCount = 10;
+    string appendNum;
     for (unsigned int i = 0; i < num; i++)
     {
-        unsigned int randomNum = rand() % 10;
-        // cout << "key: " << key % 10 << endl;
-        appendNum = appendNum + to_string(randomNum);
-        count++;
+        appendNum = "";
+        for (unsigned int i = 0; i <= digitCount; i++)
+        {
+            appendNum = appendNum + to_string(rand() % 10);
+        }
+        string generatedKey = appendNum.substr(0, 3) + "-" +
+                              appendNum.substr(3, 3) + "-" +
+                              appendNum.substr(7, 4);
+        // cout << "generatedKey: " << generatedKey << endl;
+        // cout << generatedKey << endl;
+        outFile << generatedKey << endl;
+        // cout << endl;
     }
-
-    while (count != 10) // append indexing key with zeroes
-    {
-        appendNum += "0";
-        count++;
-    }
-
-    string generatedKey = appendNum.substr(0, 3) + "-" +
-                        appendNum.substr(3, 3) + "-" +
-                        appendNum.substr(7, 4);
-
-    // Testing purposes
-    // cout << "generatedKey: " << generatedKey << endl;
-    // cout << "appendNum: " << appendNum << endl;
-
-    return generatedKey;
+    return;
 }
 
 int main()
@@ -158,13 +191,7 @@ int main()
     cout << endl;
 
     // Testing randomKeyGenerator function
-    // cout << randomKeyGenerator(0) << endl;
-    // cout << randomKeyGenerator(1) << endl;
-    // cout << randomKeyGenerator(5) << endl;
-    // cout << randomKeyGenerator(2) << endl;
-    // cout << randomKeyGenerator(8) << endl;
-    // cout << randomKeyGenerator(10) << endl;
-
+    randomKeyGenerator(20);
 
     // Testing randomKeyGenerator with hash functions
     // cout << hashFoldShift(randomKeyGenerator(3)) << endl;
