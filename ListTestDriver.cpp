@@ -14,6 +14,7 @@
 #include <stdlib.h> // for rand()
 #include <time.h>   // for time()
 #include <fstream>
+#include <sstream>
 
 using namespace std;
 
@@ -161,12 +162,121 @@ void randomKeyGenerator(unsigned int num)
     return;
 }
 
+// Description: creates a certain number of credit card numbers of the expected format.
+//              Each digit is randomly selected.
+void randomCardGenerator(unsigned int num)
+{
+    // open file "randomCardNums.txt" for writing the generated keys in overwriting mode
+    ofstream outFile;
+    outFile.open("randomCardNums.txt", ios::trunc);
+
+    // digitCount signifies the number of digits in the indexing key - In this case, phone number
+    // is the indexing key and it has 12 digits.
+    unsigned int digitCount = 12;
+    string appendNum;
+    for (unsigned int i = 0; i < num; i++)
+    {
+        appendNum = "";
+        for (unsigned int i = 0; i <= digitCount; i++)
+        {
+            appendNum = appendNum + to_string(rand() % 10);
+        }
+        outFile << appendNum << endl;
+        // cout << endl;
+    }
+    return;
+}
+
+// Description: reads the names file line by line and creates a text file of email addresses
+//             using the names in the names file.
+void emailGenerator()
+{
+    // open file "randomEmails.txt" for writing the generated keys in overwriting mode
+    ofstream outFile;
+    outFile.open("randomEmails.txt", ios::trunc);
+
+    // open file "names.txt" for reading
+    ifstream inFile;
+    inFile.open("names.txt");
+
+    string line;
+    string firstName;
+    string lastName;
+    string email;
+
+    while (getline(inFile, line))
+    {
+        stringstream ss(line);
+        ss >> firstName >> lastName;
+        email = firstName + "." + lastName + "@gmail.com";
+        outFile << email << endl;
+    }
+
+    return;
+}
+
+// Description: takes name, phone number, email address, and credit card number as input
+//             from a function and bundles them into a member data structure.
+void createMemberAndInsert(string name, string phone, string email, string card, List *member)
+{
+    Member *newMember = new Member(name, phone, email, card);
+    member->insert(*newMember);
+}
+
+// Description: reads the files containing the names, phone numbers, email addresses, and credit card numbers
+//             and passes them to the createMember function to create a member data structure.
+void readFilesAndCreateMembers(List *member)
+{
+    // open file "names.txt" for reading
+    ifstream inFile;
+    inFile.open("names.txt");
+
+    // open file "randomKeys.txt" for reading
+    ifstream inFile2;
+    inFile2.open("randomKeys.txt");
+
+    // open file "randomEmails.txt" for reading
+    ifstream inFile3;
+    inFile3.open("randomEmails.txt");
+
+    // open file "randomCardNums.txt" for reading
+    ifstream inFile4;
+    inFile4.open("randomCardNums.txt");
+
+    string first_name;
+    string last_name;
+    string phone;
+    string email;
+    string card;
+
+    while (inFile >> first_name >> last_name && inFile2 >> phone && inFile3 >> email && inFile4 >> card)
+    {
+        // for testing purposes
+        cout << "Inserting: " << first_name << " " << last_name << " " << phone << " " << email << " " << card << endl;
+        cout << endl;
+        string name = first_name + " " + last_name;
+        createMemberAndInsert(name, phone, email, card, member);
+    }
+
+    inFile.close();
+    inFile2.close();
+    inFile3.close();
+    inFile4.close();
+}
+
+// Description: takes a quantity of members to be created as input and calls the requisite functions to do that
+void createMembers(unsigned int num, List *member)
+{
+    randomKeyGenerator(num);
+    emailGenerator();
+    randomCardGenerator(num);
+    readFilesAndCreateMembers(member);
+}
+
 int main()
 {
 
     // Test: List(), insert(), getElementCount(), printList(), ~List()
-
-    string indexingKey = "123456789";
 
     // Test case 1:
     // Create a List of size CAPACITY (100) using default constructor.
@@ -182,20 +292,23 @@ int main()
     // Test case 2:
     // Insert a Member into the List.
     // Testing insert()
-    cout << "Insert a Member into the List -> testing insert()." << endl;
-    cout << "Expected Result: List with one Member." << endl;
-    Member *newMember = new Member("John Smith", "778-681-1234", "john@gmail.com", "1122334455667788");
-    member->insert(*newMember);
+    // cout << "Insert a Member into the List -> testing insert()." << endl;
+    // cout << "Expected Result: List with one Member." << endl;
+    // Member *newMember = new Member("John Smith", "778-681-1234", "john@gmail.com", "1122334455667788");
+    // member->insert(*newMember);
+    // cout << "Actual Result: " << endl;
+    // member->printList();
+    // cout << endl;
+
+    // Test Case 3:
+    // Inserting 20 members into the list using the createMembers function.
+
+    cout << "Inserting 20 members into the list using the createMembers function -> testing insert()." << endl;
+    cout << "Expected Result: List with 20 Members." << endl;
+    createMembers(20, member);
     cout << "Actual Result: " << endl;
     member->printList();
     cout << endl;
-
-    // Testing randomKeyGenerator function
-    randomKeyGenerator(20);
-
-    // Testing randomKeyGenerator with hash functions
-    // cout << hashFoldShift(randomKeyGenerator(3)) << endl;
-    // cout << hashFoldBoundary(randomKeyGenerator(6)) << endl;
 
     return 0;
 }
