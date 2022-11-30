@@ -48,14 +48,14 @@ unsigned int hashFoldShift(string indexingKey)
     unsigned int part3 = stoul(indexingKey.substr(8, 4));
 
     // Testing purposes
-    cout << "partition 1 of indexing key: " << part1 << endl;
-    cout << "partition 2 of indexing key: " << part2 << endl;
-    cout << "partition 3 of indexing key: " << part3 << endl;
+    // cout << "partition 1 of indexing key: " << part1 << endl;
+    // cout << "partition 2 of indexing key: " << part2 << endl;
+    // cout << "partition 3 of indexing key: " << part3 << endl;
 
     sumOfPart = (part1 + part2 + part3);
 
     hashCode = sumOfPart % List::CAPACITY;
-    cout << "hashCode: " << hashCode << endl;
+    // cout << "hashCode: " << hashCode << endl;
 
     return hashCode;
 }
@@ -94,43 +94,10 @@ unsigned int hashFoldBoundary(string indexingKey)
     sumOfPart = (part1 + part2 + part3);
 
     hashCode = sumOfPart % List::CAPACITY;
-    cout << "hashCode: " << hashCode << endl;
+    // cout << "hashCode: " << hashCode << endl;
 
     return hashCode;
 }
-
-// Description: creates a certain number of indexing keys of the expected format.
-//              Each digit is randomly selected.
-// string randomKeyGenerator(unsigned int num)
-// {
-//     string appendNum = "";
-//     unsigned int randomNum = 0;
-//     int count = 0;
-
-//     for (unsigned int i = 0; i < num; i++)
-//     {
-//         unsigned int randomNum = rand() % 10;
-//         // cout << "key: " << key % 10 << endl;
-//         appendNum = appendNum + to_string(randomNum);
-//         count++;
-//     }
-
-//     while (count != 10) // append indexing key with zeroes
-//     {
-//         appendNum += "0";
-//         count++;
-//     }
-
-//     string generatedKey = appendNum.substr(0, 3) + "-" +
-//                           appendNum.substr(3, 3) + "-" +
-//                           appendNum.substr(7, 4);
-
-//     // Testing purposes
-//     // cout << "generatedKey: " << generatedKey << endl;
-//     // cout << "appendNum: " << appendNum << endl;
-
-//     return generatedKey;
-// }
 
 // Description: creates a certain number of indexing keys of the expected format.
 //              Each digit is randomly selected.
@@ -252,8 +219,8 @@ void readFilesAndCreateMembers(List *member)
     while (inFile >> first_name >> last_name && inFile2 >> phone && inFile3 >> email && inFile4 >> card)
     {
         // for testing purposes
-        cout << "Inserting: " << first_name << " " << last_name << " " << phone << " " << email << " " << card << endl;
-        cout << endl;
+        // cout << "Inserting: " << first_name << " " << last_name << " " << phone << " " << email << " " << card << endl;
+        // cout << endl;
         string name = first_name + " " + last_name;
         createMemberAndInsert(name, phone, email, card, member);
     }
@@ -273,42 +240,71 @@ void createMembers(unsigned int num, List *member)
     readFilesAndCreateMembers(member);
 }
 
+// Description: Calls the hashModulo function and other requisite functions to create a hash table
+void callHashModulo()
+{
+    // Testing hashModulo hash function
+
+    List *hmTest = new List(hashModulo);
+
+    cout << "********** Testing hashModulo hash function **********" << endl;
+    cout << endl;
+
+    cout << "Inserting 100 members into the list using the hashModulo methodology" << endl;
+    createMembers(100, hmTest);
+    // cout << "Actual Result: " << endl;
+    hmTest->printList();
+    hmTest->histogram();
+    hmTest->printStats();
+    cout << endl;
+    cout << "********** End of Testing hashModulo hash function **********" << endl;
+}
+
+// Description: Calls the hashFoldShift function and other requisite functions to create a hash table
+void callHashFoldShift()
+{
+    // Testing hashFoldShift hash function
+
+    List *hfsTest = new List(hashFoldShift);
+
+    cout << "********** Testing hashFoldShift hash function **********" << endl;
+    cout << endl;
+
+    cout << "Inserting 100 members into the list using the hashFoldShift methodology" << endl;
+    createMembers(100, hfsTest);
+    // cout << "Actual Result: " << endl;
+    hfsTest->printList();
+    hfsTest->histogram();
+    hfsTest->printStats();
+    cout << endl;
+    cout << "********** End of Testing hashFoldShift hash function **********" << endl;
+}
+
+// Description: Calls the hashFoldBoundary function and other requisite functions to create a hash table
+void callHashFoldBoundary()
+{
+    // Testing hashFoldBoundary hash function
+
+    List *hfbTest = new List(hashFoldBoundary);
+
+    cout << "********** Testing hashFoldBoundary hash function **********" << endl;
+    cout << endl;
+
+    cout << "Inserting 100 members into the list using the hashFoldBoundary methodology" << endl;
+    createMembers(100, hfbTest);
+    // cout << "Actual Result: " << endl;
+    hfbTest->printList();
+    hfbTest->histogram();
+    hfbTest->printStats();
+    cout << endl;
+    cout << "********** End of Testing hashFoldBoundary hash function **********" << endl;
+}
+
 int main()
 {
-
-    // Test: List(), insert(), getElementCount(), printList(), ~List()
-
-    // Test case 1:
-    // Create a List of size CAPACITY (100) using default constructor.
-    // Testing List()
-    cout << endl
-         << "Create a default List -> testing constructor List()." << endl;
-    cout << "Expected Result: empty List." << endl;
-    List *member = new List(hashFoldBoundary);
-    cout << "Actual Result: " << endl;
-    member->printList();
-    cout << endl;
-
-    // Test case 2:
-    // Insert a Member into the List.
-    // Testing insert()
-    // cout << "Insert a Member into the List -> testing insert()." << endl;
-    // cout << "Expected Result: List with one Member." << endl;
-    // Member *newMember = new Member("John Smith", "778-681-1234", "john@gmail.com", "1122334455667788");
-    // member->insert(*newMember);
-    // cout << "Actual Result: " << endl;
-    // member->printList();
-    // cout << endl;
-
-    // Test Case 3:
-    // Inserting 20 members into the list using the createMembers function.
-
-    cout << "Inserting 20 members into the list using the createMembers function -> testing insert()." << endl;
-    cout << "Expected Result: List with 20 Members." << endl;
-    createMembers(20, member);
-    cout << "Actual Result: " << endl;
-    member->printList();
-    cout << endl;
+    callHashModulo();
+    // callHashFoldShift();
+    // callHashFoldBoundary();
 
     return 0;
 }

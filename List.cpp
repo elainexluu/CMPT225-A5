@@ -25,9 +25,11 @@ List::List(unsigned int (*hFcn)(string))
 {
     hashFcn = hFcn;
     hashTable = new Member *[CAPACITY];
+    collisions = new unsigned int[CAPACITY];
     for (int i = 0; i < CAPACITY; i++)
     {
         hashTable[i] = nullptr;
+        collisions[i] = 0;
     }
 }
 
@@ -42,6 +44,19 @@ List::~List()
             delete hashTable[i];
         }
         delete[] hashTable;
+    }
+
+    // Release all heap memory
+    if (hashTable != nullptr)
+    {
+        delete[] hashTable;
+        hashTable = nullptr;
+    }
+
+    if (collisions != nullptr)
+    {
+        delete[] collisions;
+        collisions = nullptr;
     }
 }
 
@@ -77,9 +92,11 @@ void List::insert(Member &newElement)
         while (hashTable[index] != nullptr)
         {
             index = (index + 1) % CAPACITY;
+            collisions[index]++;
         }
 
         hashTable[index] = &newElement;
+
         elementCount++;
     }
 }
@@ -128,7 +145,7 @@ void List::printList() const
         if (hashTable[i] != nullptr)
         {
             // cout << hashTable[i]->getName() << " " << hashTable[i]->getPhone() << endl;
-            cout << i << " " << *hashTable[i] << endl;
+            cout << i << " " << *hashTable[i];
         }
     }
 }
@@ -139,4 +156,52 @@ void List::printList() const
 bool List::isEmpty() const
 {
     return elementCount == 0;
+}
+
+// Description: Prints an histogram showing distribution of hash indices over the hash table.
+void List::histogram()
+{
+    cout << endl
+         << "Histogram showing distribution of hash indices over the hash table: " << endl;
+    for (unsigned int i = 0; i < CAPACITY; i++)
+    {
+        cout << "At hashTable[" << i << "]: ";
+        for (unsigned int j = 0; j < collisions[i]; j++)
+            cout << "*";
+        cout << endl;
+    }
+    return;
+}
+
+// Description: Prints various stats.
+void List::printStats()
+{
+    unsigned int emptyCell = 0;
+    unsigned int oneProbe = 0;
+    unsigned int moreProbes = 0;
+
+    cout << endl
+         << "In the process of inserting " << this->elementCount << " elements, number of collisions ... " << endl;
+    for (unsigned int i = 0; i < CAPACITY; i++)
+    {
+        if (collisions[i] == 0)
+            emptyCell++;
+        else if (collisions[i] == 1)
+            oneProbe++;
+        else
+        {
+            if (collisions[i] > 1)
+            {
+                moreProbes++;
+                cout << "at hashTable[" << i << "] = " << collisions[i] << endl;
+            }
+        }
+    }
+
+    cout << endl
+         << "There are " << emptyCell << " empty cells." << endl;
+    cout << oneProbe << " elements inserted without collisions." << endl;
+    cout << "There were " << moreProbes << " collisions." << endl;
+
+    return;
 }

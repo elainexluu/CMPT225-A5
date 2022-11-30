@@ -1,0 +1,304 @@
+********** Testing hashModulo hash function **********
+
+Inserting 100 members into the list using the hashModulo methodology
+0 Esmeralda Harmon, 796-666-0410, Esmeralda.Harmon@gmail.com, 9745975745879
+1 Destiny Ramsey, 297-682-9837, Destiny.Ramsey@gmail.com, 0662586147802
+2 Marcos Lara, 498-103-4348, Marcos.Lara@gmail.com, 3171644959840
+3 Gina Mays, 703-999-7236, Gina.Mays@gmail.com, 9582326663442
+4 Nolan Peters, 404-646-3840, Nolan.Peters@gmail.com, 9937238351542
+5 Bryan Houston, 304-875-5327, Bryan.Houston@gmail.com, 8520112455232
+6 Xavier Davidson, 103-003-3604, Xavier.Davidson@gmail.com, 3368483923092
+7 Nyla Dickerson, 003-019-6901, Nyla.Dickerson@gmail.com, 5028399301527
+8 Sharon Mcdaniel, 603-350-3271, Sharon.Mcdaniel@gmail.com, 4322111233004
+9 Lacey Grimes, 009-717-5178, Lacey.Grimes@gmail.com, 5701863096284
+10 Mollie Saunders, 310-195-6854, Mollie.Saunders@gmail.com, 0378479533608
+11 Aidan Solomon, 311-508-9305, Aidan.Solomon@gmail.com, 4675926296998
+12 Ruben Dawson, 906-173-7036, Ruben.Dawson@gmail.com, 5928398741760
+13 Alina Hall, 713-486-5065, Alina.Hall@gmail.com, 9653721842106
+14 Alayna Garner, 814-884-7984, Alayna.Garner@gmail.com, 5966852839333
+15 Eva Anthony, 915-558-9820, Eva.Anthony@gmail.com, 1308762914125
+16 Brooklynn Odom, 914-146-0240, Brooklynn.Odom@gmail.com, 2108794729701
+17 Omar Hobbs, 417-187-7744, Omar.Hobbs@gmail.com, 0903115396318
+18 Aydin Ball, 716-092-6028, Aydin.Ball@gmail.com, 0506190275245
+19 Amiya Tran, 719-311-9590, Amiya.Tran@gmail.com, 6084781704695
+20 Angie Jimenez, 520-779-5399, Angie.Jimenez@gmail.com, 7646378468230
+21 Ronin Waters, 708-537-6315, Ronin.Waters@gmail.com, 1296523994672
+22 Dana Walton, 522-737-0239, Dana.Walton@gmail.com, 6761213657363
+23 Isabell Downs, 322-147-0957, Isabell.Downs@gmail.com, 3577724299370
+24 Chandler Davila, 924-586-5139, Chandler.Davila@gmail.com, 4363474075025
+25 Mariana Hines, 222-497-2090, Mariana.Hines@gmail.com, 7487532762228
+26 Ryleigh Collins, 126-176-0451, Ryleigh.Collins@gmail.com, 7516405892326
+27 Gaven Rollins, 227-152-1018, Gaven.Rollins@gmail.com, 8873889686959
+28 Mathew Jenkins, 809-243-9055, Mathew.Jenkins@gmail.com, 0615464755641
+29 Zaria Lang, 729-811-1181, Zaria.Lang@gmail.com, 5757244996016
+30 Hana Houston, 530-485-5421, Hana.Houston@gmail.com, 5773764354569
+31 Rubi Peters, 431-794-0115, Rubi.Peters@gmail.com, 4405975540873
+32 Anabel Watts, 817-671-8185, Anabel.Watts@gmail.com, 2836637338463
+33 Kennedy Potts, 319-391-4900, Kennedy.Potts@gmail.com, 0165958591406
+34 Kathy Ellis, 934-075-5064, Kathy.Ellis@gmail.com, 3294166023358
+35 Mason Knox, 032-824-3500, Mason.Knox@gmail.com, 2335152852010
+36 Leon Lynch, 934-798-7584, Leon.Lynch@gmail.com, 9876283849632
+37 Delilah Macias, 737-502-8715, Delilah.Macias@gmail.com, 4215160023050
+38 George Aguilar, 937-480-0570, George.Aguilar@gmail.com, 9796905722015
+39 Israel Arias, 439-056-6308, Israel.Arias@gmail.com, 1187618835688
+40 Nancy Austin, 238-780-5710, Nancy.Austin@gmail.com, 0363758771613
+41 Carmelo Schaefer, 237-241-2603, Carmelo.Schaefer@gmail.com, 8366631621974
+42 Kadence Davenport, 039-531-2691, Kadence.Davenport@gmail.com, 1997906517973
+43 Alex Huerta, 443-822-4000, Alex.Huerta@gmail.com, 1069779325990
+44 Evan Pacheco, 044-597-3905, Evan.Pacheco@gmail.com, 6298592559114
+45 Anabella Cross, 644-861-0810, Anabella.Cross@gmail.com, 3964923597242
+46 Caroline Guerra, 046-032-9413, Caroline.Guerra@gmail.com, 2580323321916
+47 Nelson Barrett, 038-310-8047, Nelson.Barrett@gmail.com, 6673470706335
+48 Ryland Friedman, 748-583-6225, Ryland.Friedman@gmail.com, 0426763419598
+49 Braedon Powell, 949-651-2690, Braedon.Powell@gmail.com, 2025021237765
+50 Destiny Preston, 150-083-0134, Destiny.Preston@gmail.com, 2359191636408
+51 Kenzie Mendez, 448-015-1151, Kenzie.Mendez@gmail.com, 0131710974838
+52 Rashad Gray, 250-707-8239, Rashad.Gray@gmail.com, 3695421719476
+53 Nickolas Webb, 053-554-1161, Nickolas.Webb@gmail.com, 3860269021217
+54 Kathleen Hartman, 254-530-9459, Kathleen.Hartman@gmail.com, 6625171840771
+55 Lucia Randolph, 755-249-4795, Lucia.Randolph@gmail.com, 0604803945110
+56 Seth Shaffer, 256-340-0405, Seth.Shaffer@gmail.com, 3174969803665
+57 Tianna Wood, 056-780-5734, Tianna.Wood@gmail.com, 0564523064711
+58 Maurice Andrade, 558-147-3848, Maurice.Andrade@gmail.com, 9289256728008
+59 Madalyn Massey, 659-549-7554, Madalyn.Massey@gmail.com, 6770211437443
+60 Ramiro Romero, 760-095-2859, Ramiro.Romero@gmail.com, 6869476813808
+61 Zachariah Spears, 858-999-3773, Zachariah.Spears@gmail.com, 6179248396477
+62 Mekhi Allison, 561-591-8894, Mekhi.Allison@gmail.com, 7045142406715
+63 Paul Wade, 563-268-1488, Paul.Wade@gmail.com, 4263691045821
+64 Nancy Cantrell, 616-149-4284, Nancy.Cantrell@gmail.com, 0266873765468
+65 Angelo Underwood, 128-399-6173, Angelo.Underwood@gmail.com, 7325110290358
+66 Erik Boyer, 984-063-6974, Erik.Boyer@gmail.com, 4841008584728
+67 Brooks Ryan, 941-967-9731, Brooks.Ryan@gmail.com, 0254063005220
+68 Sydnee Montes, 564-512-8077, Sydnee.Montes@gmail.com, 8255747400661
+69 Aryanna Mckinney, 960-123-1101, Aryanna.Mckinney@gmail.com, 3258505675753
+70 Allison Blair, 970-398-5762, Allison.Blair@gmail.com, 2503735918408
+71 Ruben Holloway, 670-733-1400, Ruben.Holloway@gmail.com, 3790192969160
+72 Lance Barrera, 792-231-2168, Lance.Barrera@gmail.com, 6115690472330
+73 Zack Randolph, 873-845-9098, Zack.Randolph@gmail.com, 1021504735816
+74 Rebecca Harrington, 106-049-4506, Rebecca.Harrington@gmail.com, 3342731797614
+75 Denzel Beard, 908-828-2095, Denzel.Beard@gmail.com, 2004697393294
+76 Rosa Robbins, 359-891-8401, Rosa.Robbins@gmail.com, 8395570779830
+77 Lyric Goodwin, 377-512-6541, Lyric.Goodwin@gmail.com, 1955177804453
+78 Caroline Hutchinson, 901-369-4024, Caroline.Hutchinson@gmail.com, 9228712695858
+79 Layla Dodson, 419-021-4902, Layla.Dodson@gmail.com, 3754450398995
+80 Miracle Dawson, 380-094-4029, Miracle.Dawson@gmail.com, 5632719517605
+81 Felipe Moran, 081-495-0235, Felipe.Moran@gmail.com, 9718504260998
+82 Yosef Santos, 038-216-3297, Yosef.Santos@gmail.com, 3847712874265
+83 Sanai Ho, 683-861-6789, Sanai.Ho@gmail.com, 0474180881723
+84 Paul Lopez, 784-006-4741, Paul.Lopez@gmail.com, 1811307235835
+85 Jonas Barajas, 585-679-1612, Jonas.Barajas@gmail.com, 5748060592837
+86 Ashley Wiggins, 685-376-6718, Ashley.Wiggins@gmail.com, 4231212564801
+87 Sharon Ramos, 385-124-7550, Sharon.Ramos@gmail.com, 8317868674008
+88 Azul Cohen, 788-381-3543, Azul.Cohen@gmail.com, 3917966644457
+89 Joe Riley, 188-352-6678, Joe.Riley@gmail.com, 0799944129473
+90 Nicolas Ortiz, 588-947-4065, Nicolas.Ortiz@gmail.com, 9144526950302
+91 Kaiya Dawson, 491-598-0907, Kaiya.Dawson@gmail.com, 4433297971339
+92 Lia Collier, 092-492-1093, Lia.Collier@gmail.com, 7227930901582
+93 Zoey Combs, 793-802-8390, Zoey.Combs@gmail.com, 3486115698022
+94 Tommy Young, 093-757-9756, Tommy.Young@gmail.com, 2915880408559
+95 Royce Garcia, 395-174-1460, Royce.Garcia@gmail.com, 9150059434444
+96 Ronan Decker, 896-042-3700, Ronan.Decker@gmail.com, 8451104161452
+97 Lizbeth Johnson, 497-310-3718, Lizbeth.Johnson@gmail.com, 0542679591089
+98 Ella Howe, 397-795-3385, Ella.Howe@gmail.com, 3119809524235
+99 Shyanne Suarez, 396-640-2060, Shyanne.Suarez@gmail.com, 2274757389371
+
+Histogram showing distribution of hash indices over the hash table: 
+At hashTable[0]: *****
+At hashTable[1]: ****
+At hashTable[2]: ****
+At hashTable[3]: ***
+At hashTable[4]: ******
+At hashTable[5]: *******
+At hashTable[6]: ******
+At hashTable[7]: *******
+At hashTable[8]: ******
+At hashTable[9]: *******
+At hashTable[10]: ********
+At hashTable[11]: ********
+At hashTable[12]: ********
+At hashTable[13]: *******
+At hashTable[14]: *******
+At hashTable[15]: ********
+At hashTable[16]: ********
+At hashTable[17]: *********
+At hashTable[18]: **********
+At hashTable[19]: *********
+At hashTable[20]: ***********
+At hashTable[21]: ***********
+At hashTable[22]: **********
+At hashTable[23]: ************
+At hashTable[24]: ***********
+At hashTable[25]: ***********
+At hashTable[26]: **********
+At hashTable[27]: **********
+At hashTable[28]: **********
+At hashTable[29]: **********
+At hashTable[30]: **********
+At hashTable[31]: **********
+At hashTable[32]: **********
+At hashTable[33]: **********
+At hashTable[34]: *********
+At hashTable[35]: **********
+At hashTable[36]: *********
+At hashTable[37]: ********
+At hashTable[38]: **********
+At hashTable[39]: ************
+At hashTable[40]: *************
+At hashTable[41]: ************
+At hashTable[42]: ************
+At hashTable[43]: ***********
+At hashTable[44]: ***********
+At hashTable[45]: ************
+At hashTable[46]: ***********
+At hashTable[47]: ***********
+At hashTable[48]: **********
+At hashTable[49]: ***********
+At hashTable[50]: ***********
+At hashTable[51]: ************
+At hashTable[52]: ***********
+At hashTable[53]: **********
+At hashTable[54]: **********
+At hashTable[55]: **********
+At hashTable[56]: **********
+At hashTable[57]: ***********
+At hashTable[58]: **********
+At hashTable[59]: ***********
+At hashTable[60]: ************
+At hashTable[61]: *************
+At hashTable[62]: *************
+At hashTable[63]: ************
+At hashTable[64]: ************
+At hashTable[65]: ************
+At hashTable[66]: ***********
+At hashTable[67]: **********
+At hashTable[68]: *********
+At hashTable[69]: ********
+At hashTable[70]: *******
+At hashTable[71]: ********
+At hashTable[72]: *******
+At hashTable[73]: ******
+At hashTable[74]: ******
+At hashTable[75]: *****
+At hashTable[76]: ****
+At hashTable[77]: ***
+At hashTable[78]: ***
+At hashTable[79]: **
+At hashTable[80]: *
+At hashTable[81]: *
+At hashTable[82]: *
+At hashTable[83]: 
+At hashTable[84]: 
+At hashTable[85]: *
+At hashTable[86]: ***
+At hashTable[87]: **
+At hashTable[88]: *
+At hashTable[89]: ***
+At hashTable[90]: **
+At hashTable[91]: *
+At hashTable[92]: *
+At hashTable[93]: **
+At hashTable[94]: ***
+At hashTable[95]: **
+At hashTable[96]: **
+At hashTable[97]: ****
+At hashTable[98]: ******
+At hashTable[99]: ******
+
+In the process of inserting 100 elements, number of collisions ... 
+at hashTable[0] = 5
+at hashTable[1] = 4
+at hashTable[2] = 4
+at hashTable[3] = 3
+at hashTable[4] = 6
+at hashTable[5] = 7
+at hashTable[6] = 6
+at hashTable[7] = 7
+at hashTable[8] = 6
+at hashTable[9] = 7
+at hashTable[10] = 8
+at hashTable[11] = 8
+at hashTable[12] = 8
+at hashTable[13] = 7
+at hashTable[14] = 7
+at hashTable[15] = 8
+at hashTable[16] = 8
+at hashTable[17] = 9
+at hashTable[18] = 10
+at hashTable[19] = 9
+at hashTable[20] = 11
+at hashTable[21] = 11
+at hashTable[22] = 10
+at hashTable[23] = 12
+at hashTable[24] = 11
+at hashTable[25] = 11
+at hashTable[26] = 10
+at hashTable[27] = 10
+at hashTable[28] = 10
+at hashTable[29] = 10
+at hashTable[30] = 10
+at hashTable[31] = 10
+at hashTable[32] = 10
+at hashTable[33] = 10
+at hashTable[34] = 9
+at hashTable[35] = 10
+at hashTable[36] = 9
+at hashTable[37] = 8
+at hashTable[38] = 10
+at hashTable[39] = 12
+at hashTable[40] = 13
+at hashTable[41] = 12
+at hashTable[42] = 12
+at hashTable[43] = 11
+at hashTable[44] = 11
+at hashTable[45] = 12
+at hashTable[46] = 11
+at hashTable[47] = 11
+at hashTable[48] = 10
+at hashTable[49] = 11
+at hashTable[50] = 11
+at hashTable[51] = 12
+at hashTable[52] = 11
+at hashTable[53] = 10
+at hashTable[54] = 10
+at hashTable[55] = 10
+at hashTable[56] = 10
+at hashTable[57] = 11
+at hashTable[58] = 10
+at hashTable[59] = 11
+at hashTable[60] = 12
+at hashTable[61] = 13
+at hashTable[62] = 13
+at hashTable[63] = 12
+at hashTable[64] = 12
+at hashTable[65] = 12
+at hashTable[66] = 11
+at hashTable[67] = 10
+at hashTable[68] = 9
+at hashTable[69] = 8
+at hashTable[70] = 7
+at hashTable[71] = 8
+at hashTable[72] = 7
+at hashTable[73] = 6
+at hashTable[74] = 6
+at hashTable[75] = 5
+at hashTable[76] = 4
+at hashTable[77] = 3
+at hashTable[78] = 3
+at hashTable[79] = 2
+at hashTable[86] = 3
+at hashTable[87] = 2
+at hashTable[89] = 3
+at hashTable[90] = 2
+at hashTable[93] = 2
+at hashTable[94] = 3
+at hashTable[95] = 2
+at hashTable[96] = 2
+at hashTable[97] = 4
+at hashTable[98] = 6
+at hashTable[99] = 6
+
+There are 2 empty cells.
+7 elements inserted without collisions.
+There were 91 collisions.
+
+********** End of Testing hashModulo hash function **********

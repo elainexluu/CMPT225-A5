@@ -31,6 +31,8 @@ private:
   unsigned int elementCount = 0;        // Current number of elements stored into Data Collection.
   unsigned int (*hashFcn)(string name); // Pointer to hash function.
 
+  unsigned int *collisions = nullptr; // Record the number of time hash function produce a particular hash index
+
   // Description: Checks if the table is empty.
   // Postcondition: List remains unchanged.
   bool isEmpty() const;
@@ -73,6 +75,12 @@ public:
   // Description: Prints all elements stored in the List (unsorted).
   // Postcondition: List remains unchanged.
   void printList() const;
+
+  // Description: Prints an histogram showing distribution of hash indices over the hash table.
+  void histogram();
+
+  // Description: Prints various stats.
+  void printStats();
 
 }; // end List.h
 #endif
