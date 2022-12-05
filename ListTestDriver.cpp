@@ -15,6 +15,7 @@
 #include <time.h>   // for time()
 #include <fstream>
 #include <sstream>
+#include <math.h>
 
 using namespace std;
 
@@ -29,7 +30,15 @@ unsigned int hashModulo(string indexingKey)
     // "hashCode" is an intermediate result
     unsigned int hashCode = stoul(indexingKey);
 
-    return hashCode % List::CAPACITY;
+    string part1 = indexingKey.substr(0, 3);
+    string part2 = indexingKey.substr(4, 3);
+    string part3 = indexingKey.substr(8, 4);
+
+    string sumOfPart = (part1 + part2 + part3);
+
+    hashCode = stoul(sumOfPart) % List::CAPACITY;
+
+    return hashCode;
 }
 
 // Hash Function #2
@@ -53,6 +62,8 @@ unsigned int hashFoldShift(string indexingKey)
     // cout << "partition 3 of indexing key: " << part3 << endl;
 
     sumOfPart = (part1 + part2 + part3);
+
+    // cout << "sum of partitions: " << sumOfPart << endl;
 
     hashCode = sumOfPart % List::CAPACITY;
     // cout << "hashCode: " << hashCode << endl;
@@ -94,7 +105,11 @@ unsigned int hashFoldBoundary(string indexingKey)
     sumOfPart = (part1 + part2 + part3);
 
     hashCode = sumOfPart % List::CAPACITY;
-    // cout << "hashCode: " << hashCode << endl;
+
+    // unsigned int newhashCode = (2 * hashCode + sumOfChars) % List::CAPACITY;
+
+    // cout << "hashCode: " << hashCode << " new: " << newhashCode << endl;
+    // hashCode = ((1 + hashCode) / (hashCode)) * List::CAPACITY;
 
     return hashCode;
 }
@@ -106,6 +121,8 @@ void randomKeyGenerator(unsigned int num)
     // open file "randomKeys.txt" for writing the generated keys in overwriting mode
     ofstream outFile;
     outFile.open("randomKeys.txt", ios::trunc);
+
+    srand((unsigned)time(NULL));
 
     // digitCount signifies the number of digits in the indexing key - In this case, phone number
     // is the indexing key and it has 10 digits.
@@ -254,9 +271,13 @@ void callHashModulo()
     createMembers(100, hmTest);
     // cout << "Actual Result: " << endl;
     hmTest->printList();
-    hmTest->histogram();
-    hmTest->printStats();
+    // hmTest->histogram();
+    // hmTest->printStats();
     cout << endl;
+
+    unsigned int insertCount = hmTest->returnInsertCount();
+    cout << "Total number of insertions: " << insertCount << endl;
+
     cout << "********** End of Testing hashModulo hash function **********" << endl;
 }
 
@@ -274,9 +295,13 @@ void callHashFoldShift()
     createMembers(100, hfsTest);
     // cout << "Actual Result: " << endl;
     hfsTest->printList();
-    hfsTest->histogram();
-    hfsTest->printStats();
+    // hfsTest->histogram();
+    // hfsTest->printStats();
     cout << endl;
+
+    unsigned int insertCount = hfsTest->returnInsertCount();
+    cout << "Total number of insertions: " << insertCount << endl;
+
     cout << "********** End of Testing hashFoldShift hash function **********" << endl;
 }
 
@@ -294,17 +319,20 @@ void callHashFoldBoundary()
     createMembers(100, hfbTest);
     // cout << "Actual Result: " << endl;
     hfbTest->printList();
-    hfbTest->histogram();
-    hfbTest->printStats();
+    // hfbTest->histogram();
+    // hfbTest->printStats();
     cout << endl;
+
+    unsigned int insertCount = hfbTest->returnInsertCount();
+    cout << "Total number of insertions: " << insertCount << endl;
+
     cout << "********** End of Testing hashFoldBoundary hash function **********" << endl;
 }
 
 int main()
 {
-    callHashModulo();
+    // callHashModulo();
     // callHashFoldShift();
-    // callHashFoldBoundary();
-
+    callHashFoldBoundary();
     return 0;
 }

@@ -20,6 +20,9 @@
 #include "EmptyDataCollectionException.h"
 #include "UnableToInsertException.h"
 
+using namespace std;
+unsigned int insertCount = 0;
+
 // Constructor
 List::List(unsigned int (*hFcn)(string))
 {
@@ -95,7 +98,13 @@ void List::insert(Member &newElement)
             collisions[index]++;
         }
 
+        // if (hashTable[index] == nullptr)
+        // {
+        //     insertCount++;
+        // }
+
         hashTable[index] = &newElement;
+        // collisions[index]++;
 
         elementCount++;
     }
@@ -204,4 +213,9 @@ void List::printStats()
     cout << "There were " << moreProbes << " collisions." << endl;
 
     return;
+}
+
+unsigned int List::returnInsertCount()
+{
+    return insertCount;
 }

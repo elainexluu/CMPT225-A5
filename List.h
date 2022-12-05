@@ -82,5 +82,7 @@ public:
   // Description: Prints various stats.
   void printStats();
 
+  unsigned int returnInsertCount();
+
 }; // end List.h
 #endif
