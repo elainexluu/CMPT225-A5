@@ -23,6 +23,8 @@ using namespace std;
 // Description: Implements the type of hash function called
 //              "modular arithmetic" in which we use the modulo
 //              operator to produce the "hash index".
+// Time Efficiency: Amortized O(1)
+// Space Efficiency: O(1)
 unsigned int hashModulo(string indexingKey)
 {
 
@@ -45,6 +47,8 @@ unsigned int hashModulo(string indexingKey)
 // Description: Implements the type of hash function called "Folding -> shift"
 //              in which we partition the indexing key into parts and combine
 //              these parts using arithmetic operation(s).
+// Time Efficiency: Amortized O(1)
+// Space Efficiency: O(1)
 unsigned int hashFoldShift(string indexingKey)
 {
 
@@ -76,6 +80,8 @@ unsigned int hashFoldShift(string indexingKey)
 //              in which we partition the indexing key into parts and combine
 //              these parts using arithmetic operation(s). In this type of folding,
 //              the alternate parts (2nd, 4th ... parts) are reversed (i.e., flipped).
+// Time Efficiency: Amortized O(1)
+// Space Efficiency: O(1)
 unsigned int hashFoldBoundary(string indexingKey)
 {
 
@@ -204,7 +210,14 @@ void emailGenerator()
 void createMemberAndInsert(string name, string phone, string email, string card, List *member)
 {
     Member *newMember = new Member(name, phone, email, card);
-    member->insert(*newMember);
+    try
+    {
+        member->insert(*newMember);
+    }
+    catch (exception &e)
+    {
+        cout << "Exception: " << e.what() << endl;
+    }
 }
 
 // Description: reads the files containing the names, phone numbers, email addresses, and credit card numbers
@@ -275,10 +288,13 @@ void callHashModulo()
     // hmTest->printStats();
     cout << endl;
 
-    unsigned int insertCount = hmTest->returnInsertCount();
-    cout << "Total number of insertions: " << insertCount << endl;
+    // unsigned int insertCount = hmTest->returnInsertCount();
+    // cout << "Total number of insertions: " << insertCount << endl;
 
     cout << "********** End of Testing hashModulo hash function **********" << endl;
+
+    delete hmTest;
+    hmTest = nullptr;
 }
 
 // Description: Calls the hashFoldShift function and other requisite functions to create a hash table
@@ -299,10 +315,13 @@ void callHashFoldShift()
     // hfsTest->printStats();
     cout << endl;
 
-    unsigned int insertCount = hfsTest->returnInsertCount();
-    cout << "Total number of insertions: " << insertCount << endl;
+    // unsigned int insertCount = hfsTest->returnInsertCount();
+    // cout << "Total number of insertions: " << insertCount << endl;
 
     cout << "********** End of Testing hashFoldShift hash function **********" << endl;
+
+    delete hfsTest;
+    hfsTest = nullptr;
 }
 
 // Description: Calls the hashFoldBoundary function and other requisite functions to create a hash table
@@ -323,16 +342,19 @@ void callHashFoldBoundary()
     // hfbTest->printStats();
     cout << endl;
 
-    unsigned int insertCount = hfbTest->returnInsertCount();
-    cout << "Total number of insertions: " << insertCount << endl;
+    // unsigned int insertCount = hfbTest->returnInsertCount();
+    // cout << "Total number of insertions: " << insertCount << endl;
 
     cout << "********** End of Testing hashFoldBoundary hash function **********" << endl;
+
+    delete hfbTest;
+    hfbTest = nullptr;
 }
 
 int main()
 {
-    // callHashModulo();
+    callHashModulo();
     // callHashFoldShift();
-    callHashFoldBoundary();
+    // callHashFoldBoundary();
     return 0;
 }

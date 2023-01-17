@@ -42,11 +42,11 @@ List::~List()
 {
     for (int i = 0; i < CAPACITY; i++)
     {
-        if (hashTable != nullptr)
+        if (hashTable[i] != nullptr)
         {
             delete hashTable[i];
+            hashTable[i] = nullptr;
         }
-        delete[] hashTable;
     }
 
     // Release all heap memory
